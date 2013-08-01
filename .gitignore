@@ -1,5 +1,6 @@
 *.tmp
 *.metadata
+*.settings
 *.db
 bin/
 build/
