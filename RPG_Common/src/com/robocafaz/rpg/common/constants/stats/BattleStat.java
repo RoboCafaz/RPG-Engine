@@ -1,6 +1,8 @@
-package com.robocafaz.rpg.common.stats;
+package com.robocafaz.rpg.common.constants.stats;
 
-public enum BattleStat {
+import com.robocafaz.rpg.common.constants.UserFacingConstant;
+
+public enum BattleStat implements UserFacingConstant {
   HEALTH("Health", "HP", "Your character's health pool.", 1, 1000),
   SPIRIT("Spirit", "SP", "Spirit energy used to perform special abilities.", 0, 100),
   MANA("Mana", "MP", "Magical energy used to cast spells.", 0, 250),
@@ -25,6 +27,7 @@ public enum BattleStat {
     this.max = max;
   }
 
+  @Override
   public String getName() {
     return this.name;
   }
@@ -33,6 +36,7 @@ public enum BattleStat {
     return this.abbreviation;
   }
 
+  @Override
   public String getDescription() {
     return this.description;
   }
