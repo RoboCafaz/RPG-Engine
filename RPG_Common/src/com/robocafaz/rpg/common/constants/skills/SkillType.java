@@ -1,4 +1,4 @@
-package com.robocafaz.rpg.common.constants.types;
+package com.robocafaz.rpg.common.constants.skills;
 
 import com.robocafaz.rpg.common.constants.UserFacingConstant;
 
