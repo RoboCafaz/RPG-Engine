@@ -58,7 +58,7 @@
 	
   <target name="package-all" depends="clean-project,init-project">
     <subant buildpath="RPG_Common" antfile="build.xml" target="package" />
-    <subant buildpath="RPG_Datahandler" antfile="build.xml" target="package" />
+    <subant buildpath="RPG_Dataloader" antfile="build.xml" target="package" />
     
     <zip destfile="${local.dist}${file.separator}${ant.project.name}-target-platform.zip">
       <fileset dir="${local.dist.jar}">

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 
-<project name="com.robocafaz.rpg.datahandlers" default="dist">
+<project name="com.robocafaz.rpg.dataloader" default="dist">
 	<import file="..${file.separator}shared-build.xml" />
 </project>

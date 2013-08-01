@@ -10,9 +10,6 @@
   <property name="versioned.project.name" value="${ant.project.name}_${version}" />
   <property name="jar.file.name" value="${versioned.project.name}.jar" />
 
-  <property name="runtime.libs" value="lib-run" />
-  <property name="dir.lib.compile" value="${basedir}${file.separator}lib-compile" />
-  <property name="dir.lib.dist" value="${basedir}${file.separator}${runtime.libs}" />
   <property name="dir.build" value="${basedir}${file.separator}build" />
   <property name="dir.build.src" value="${dir.build}${file.separator}src" />
   <property name="dir.dist" value="${basedir}${file.separator}dist" />
@@ -39,23 +36,7 @@
     <equals arg1="" arg2="${src.exists.property}" />
   </condition>
 
-  <path id="junit.classpath">
-    <fileset dir="${dir.junit}">
-      <include name="junit*.jar" />
-    </fileset>
-  </path>
-
-  <path id="cobertura.classpath">
-    <fileset dir="${dir.cobertura}">
-      <include name="cobertura.jar" />
-      <include name="cobertura/**/*.jar" />
-    </fileset>
-  </path>
-
   <path id="path.compile.src">
-    <fileset dir="${dir.lib.compile}">
-      <include name="*.jar" />
-    </fileset>
     <fileset dir="${shared.lib}">
       <include name="*.jar" />
     </fileset>
@@ -63,12 +44,6 @@
       <include name="**/*.jar" />
     </fileset>
     <fileset dir="${shared.dist.classpath}">
-      <include name="*.jar" />
-    </fileset>
-  </path>
-
-  <path id="path.jar.lib">
-    <fileset dir="${dir.lib.dist}">
       <include name="*.jar" />
     </fileset>
   </path>
@@ -90,8 +65,6 @@
   <target name="init" depends="clean">
     <mkdir dir="${dir.build.src}" />
     <mkdir dir="${dir.dist}" />
-    <mkdir dir="${dir.lib.compile}" />
-    <mkdir dir="${dir.lib.dist}" />
     <mkdir dir="${dir.src}" />
     <mkdir dir="${shared.dist.jar}" />
   </target>
@@ -108,16 +81,9 @@
 
 
   <target name="jar" depends="compile">
-    <pathconvert dirsep="/" pathsep=" " property="archive.classpath" refid="path.jar.lib">
-      <map from="${dir.lib.dist}" to="${versioned.project.name}" />
-    </pathconvert>
-
     <jar jarfile="${dir.build}${file.separator}${versioned.project.name}-with-source.jar" compress="true" manifest="META-INF/MANIFEST.MF">
       <fileset dir="${dir.build.src}">
         <include name="**/*" />
-      </fileset>
-      <fileset dir="${basedir}">
-        <include name="${runtime.libs}/**/*.jar" />
       </fileset>
       <fileset dir="${basedir}">
         <include name="src/**/*" />
@@ -131,9 +97,6 @@
     <jar jarfile="${dir.build}${file.separator}${versioned.project.name}.jar" compress="true" manifest="META-INF/MANIFEST.MF">
       <fileset dir="${dir.build.src}">
         <include name="**/*" />
-      </fileset>
-      <fileset dir="${basedir}">
-        <include name="${runtime.libs}/**/*.jar" />
       </fileset>
       <fileset dir="${basedir}">
         <include name="OSGI-INF/**/*" />
