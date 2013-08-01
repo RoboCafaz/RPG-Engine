@@ -1,8 +1,8 @@
 *.tmp
 *.metadata
-*/bin
-*/build
-*/dist
 *.db
-*/test
-*/doc
+bin/
+build/
+dist/
+test/
+doc/
