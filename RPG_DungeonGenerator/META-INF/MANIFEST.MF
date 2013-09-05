@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RPG Dungeon Generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: com.robocafaz.rpg.dungeongenerator
+Bundle-Vendor: robocafaz
+Bundle-Version: 0.0.0.1

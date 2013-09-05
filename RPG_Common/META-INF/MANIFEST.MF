@@ -10,3 +10,11 @@ Export-Package: com.robocafaz.rpg.common.constants,
  com.robocafaz.rpg.common.constants.stats,
  com.robocafaz.rpg.common.constants.types,
  com.robocafaz.rpg.common.handlers
+Bundle-ClassPath: .,
+ lib/easyogg.jar,
+ lib/jogg-0.0.7.jar,
+ lib/jorbis-0.0.15.jar
+Import-Package: org.apache.log4j;version="1.2.15",
+ org.osgi.framework;version="1.7.0"
+Require-Bundle: slf4j.api;bundle-version="1.7.5",
+ org.eclipse.osgi.services;bundle-version="3.3.100"

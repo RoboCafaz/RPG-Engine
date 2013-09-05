@@ -25,4 +25,21 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>lib/easyogg.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lib/easyogg.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/jogg-0.0.7.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lib/jogg-0.0.7.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/jorbis-0.0.15.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/lib/jorbis-0.0.15.jar</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
